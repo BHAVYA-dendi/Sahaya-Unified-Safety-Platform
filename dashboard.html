@@ -1,0 +1,70 @@
+women family child elderly <!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>Dashboard</h2>
+    <button id="themeToggle" onclick="toggleTheme()" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: inherit; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px;">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- User Info -->
+  <p id="welcomeUser"></p>
+  <img id="userPhoto" width="80" style="border-radius:50%; display:block; margin:10px auto;">
+
+  <!-- SOS BUTTON -->
+  <button class="sos-btn" onclick="sendSOS()">🚨 SOS</button>
+
+  <!-- PORTALS -->
+  <div class="card">
+    <h3>Safety Portals</h3>
+    <div id="portalContainer"></div>
+  </div>
+
+  <!-- EMERGENCY CONTACTS -->
+  <div class="card">
+    <h3>🚨 Emergency Contacts</h3>
+    <div id="profileEmergencyContacts"></div>
+  </div>
+
+  <!-- FAMILY -->
+  <div class="card" id="familyCard" style="display:none;">
+    <h3>Family Status</h3>
+    <div id="familyInfo"></div>
+  </div>
+
+  <!-- DEBUG -->
+  <div class="card">
+    <h3>Debug Info</h3>
+    <button onclick="debugEmergencyContacts()" style="background: #007bff; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Test Emergency Contacts</button>
+    <p id="debugInfo">Click button to test</p>
+  </div>
+
+  <!-- ALERTS -->
+  <div class="card">
+    <h3>Alerts</h3>
+    <p id="alertStatus">No active alerts</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  loadUser().then(() => {
+    loadPortals();
+    loadFamily();
+    loadEmergencyContacts();
+  });
+</script>
+
+</body>
+</html>
