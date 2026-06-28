@@ -4,7 +4,7 @@
 // =======================
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL ='https://sahaya-unified-safety-platform.onrender.com/api';
 
 // API Helper Functions
 async function apiRequest(endpoint, options = {}) {
