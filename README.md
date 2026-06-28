@@ -1,128 +1,232 @@
-# SAHAYA - National Safety Platform
+# 🚨 Sahaya – Unified Safety & Disaster Platform
 
-A comprehensive safety platform for Women, Children, Elderly, Disaster Management, and Health Emergency.
+A full-stack web application prototype designed to improve personal safety and emergency response for women, children, senior citizens, and disaster situations.
 
-## Project Structure
+The project demonstrates a unified platform where users can register, manage emergency contacts, raise SOS alerts, and access safety-related services through a single interface.
+
+> **Note:** This project was developed as a college project and serves as a functional prototype. Some emergency features are simulated for demonstration purposes and are not connected to real-world emergency services.
+
+---
+
+# Features
+
+## User Authentication
+
+* User Registration
+* Secure Login
+* JWT Authentication
+* User Profile Management
+
+## Emergency & Safety
+
+* SOS Alert Interface
+* Emergency Contact Management
+* Family Member Management
+* Disaster Response Dashboard
+* Safety Information Portal
+
+## Disaster Management
+
+* Emergency Awareness Interface
+* Disaster Information Dashboard
+* Safety Guidelines
+* Shelter Information Prototype
+
+## User Dashboard
+
+* Personalized Dashboard
+* Profile Information
+* Emergency Contact Details
+* Family Member Information
+
+---
+
+# Tech Stack
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
+
+## Backend
+
+* Node.js
+* Express.js
+
+## Database
+
+* MongoDB
+* Mongoose
+
+## Authentication
+
+* JSON Web Token (JWT)
+* bcrypt.js
+
+## File Upload
+
+* Multer
+
+---
+
+# Project Structure
 
 ```
-safety-app/
-├── index.html              # Main SPA with auth, registration, dashboard
-├── dashboard.html          # Standalone dashboard page
-├── women.html             # Women Safety Portal
-├── child.html             # Child Safety Portal
-├── elderly.html           # Elderly Safety Portal
-├── disaster.html          # Disaster Management Portal
-├── family.html            # Family Management
-├── script.js              # Frontend JavaScript with API integration
-├── styles.css             # Application styles
-├── sahaya-logo.png        # Logo assets
+Sahaya-Unified-Safety-Platform
+│
+├── index.html
+├── dashboard.html
+├── script.js
+├── styles.css
+├── README.md
+│
+├── dark-bg.jpeg
+├── light-bg-pat.jpeg
 ├── light-logo.png
-├── backend/               # Node.js/Express Backend
-│   ├── server.js          # Main server file
-│   ├── package.json       # Dependencies
-│   ├── .env              # Environment variables
-│   ├── models/            # MongoDB models
-│   │   ├── User.js
-│   │   ├── SOSAlert.js
-│   │   └── FamilyMember.js
-│   ├── routes/            # API routes
-│   │   ├── auth.js        # Login/Register
-│   │   ├── user.js        # Profile management
-│   │   ├── sos.js         # SOS alerts
-│   │   ├── family.js      # Family management
-│   │   └── upload.js      # File uploads
-│   ├── middleware/        # Auth & upload middleware
-│   │   ├── auth.js
-│   │   └── upload.js
-│   └── uploads/           # Uploaded files storage
-└── README.md             # This file
+├── sahaya-logo.png
+│
+└── backend
+    ├── server.js
+    ├── package.json
+    ├── models
+    ├── routes
+    ├── middleware
+    ├── uploads
+    └── .env.example
 ```
 
-## Quick Start
+---
 
-### 1. Install MongoDB
+# Installation
 
-**Option A: Local MongoDB**
-- Download and install MongoDB Community Server: https://www.mongodb.com/try/download/community
-- Start MongoDB service
+## 1. Clone the repository
 
-**Option B: MongoDB Atlas (Cloud)**
-- Create free cluster at https://www.mongodb.com/atlas
-- Get connection string and update `backend/.env`
+```bash
+git clone https://github.com/BHAVYA-dendi/Sahaya-Unified-Safety-Platform.git
+```
 
-### 2. Setup Backend
+## 2. Navigate to backend
 
 ```bash
 cd backend
+```
 
-# Install dependencies
+## 3. Install dependencies
+
+```bash
 npm install
+```
 
-# Start server
+## 4. Configure Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+Example:
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+---
+
+## 5. Start the Backend
+
+```bash
 npm start
+```
 
-# Or for development with auto-reload
+or
+
+```bash
 npm run dev
 ```
 
-Server will run on `http://localhost:5000`
+---
 
-### 3. Open Frontend
+## 6. Open the Frontend
 
-Open `index.html` directly in browser or use a local server:
+Open `index.html` in your browser
+
+or use
 
 ```bash
-# Using Python 3
-python -m http.server 8080
-
-# Or using Node.js npx
-npx serve ..
+npx serve .
 ```
 
-Then open `http://localhost:8080`
+---
 
-## Features
+# API Modules
 
-### Authentication
-- User registration (6-step process)
-- JWT-based login
-- Profile management
+* Authentication
+* User Management
+* SOS Alerts
+* Family Management
+* File Upload
 
-### Safety Portals
-- **Women Safety**: SOS alerts, video recording, fake calls, safe routes
-- **Child Safety**: Location tracking, geofencing, activity monitoring
-- **Elderly Safety**: Fall detection, health monitoring, medication reminders
-- **Disaster Management**: Emergency alerts, shelter locator, evacuation routes
-- **Health Emergency**: Medical SOS, hospital finder
+---
 
-### Emergency Features
-- **SOS Button**: 5-second countdown with location sharing
-- **Video Recording**: Automatic recording during emergencies
-- **Emergency Contacts**: SMS/call notifications
-- **Real-time Location**: GPS tracking with Google Maps integration
+# Screenshots
 
-### Family Management
-- Add children and elderly family members
-- Track locations and status
-- Safe zone alerts
-- Activity monitoring for children
+Add screenshots here after deployment.
 
-## API Endpoints
+Example:
 
-### Auth
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login
-- `GET /api/auth/me` - Get current user
+```
+screenshots/
+    home.png
+    login.png
+    dashboard.png
+    sos.png
+    profile.png
+```
 
-### User
-- `GET /api/user/profile` - Get profile
-- `PUT /api/user/profile` - Update profile
-- `PUT /api/user/portals` - Update portals
-- `PUT /api/user/emergency-contacts` - Update contacts
-- `DELETE /api/user` - Delete account
+---
 
-### SOS
-- `POST /api/sos/alert` - Create alert
+# Future Improvements
+
+* Real-time Emergency Notifications
+* Live GPS Tracking
+* Google Maps Integration
+* Real Phone Call Integration
+* SMS Notification Service
+* Push Notifications
+* AI-based Disaster Alerts
+* Deployment on Cloud
+
+---
+
+# Learning Outcomes
+
+This project helped in understanding:
+
+* Full Stack Web Development
+* REST API Design
+* MongoDB Integration
+* JWT Authentication
+* Express.js Routing
+* File Upload Handling
+* Frontend and Backend Integration
+
+---
+
+# Disclaimer
+
+This project was developed for academic and learning purposes.
+
+Some features represent workflow demonstrations and prototype interfaces rather than production-ready emergency services.
+
+---
+
+# Author
+
+**Dendi Bhavya Reddy**
+
+GitHub:
+https://github.com/BHAVYA-dendi
+
 - `GET /api/sos/alerts` - Get history
 - `PUT /api/sos/resolve/:id` - Resolve alert
 
